@@ -10,6 +10,7 @@ Route::get('/', function() {
 // List all books / search
 Route::get('/list/{format?}', function($format = 'html') {
 
+    // Connect data to form
     $query = Input::get('query');
 
     $library = new Library();
@@ -22,6 +23,7 @@ Route::get('/list/{format?}', function($format = 'html') {
 
     if($format == 'json') {
         return 'JSON Version';
+        
     }
     elseif($format == 'pdf') {
         return 'PDF Version;';
